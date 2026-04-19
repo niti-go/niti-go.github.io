@@ -1,166 +1,151 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Solid State by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niti Goyal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-				<!-- Fixed Navigation Buttons -->
-					<nav id="fixed-nav">
-						<a href="#about" class="nav-button">About</a>
-						<a href="#experience" class="nav-button">Experience</a>
-						<a href="#projects" class="nav-button">Projects</a>
-					</nav>
+<body>
+  <nav class="navbar">
+    <a href="#" class="nav-brand"><img src="./assets/name_logo.jpg" alt="Niti Goyal" class="nav-logo"></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blog">Blog</a></li>
+			<li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-														<h2>Niti Goyal</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-						</div>
-					</section>
+  <section class="hero">
+    <img src="./assets/dubai-wall-drawn.png" alt="Niti Goyal" class="hero-image">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi! I am</p>
+      <h1 class="hero-name">Niti Goyal</h1>
+      <p class="hero-subtitle">Student, Creator, Explorer</p>
+    </div>
+  </section>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="content-grid">
+      <div class="section-text">
+        <h3>Education</h3>
+        <p>Computer Science at Cornell University</p>
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+        <h3>Interests</h3>
+        <p>I am a graduating senior passionate about applying machine learning to drive innovation.</p>
+        <p>My hobbies include rock climbing, practicing handstands, and reading news articles.</p>
+      </div>
+      <img src="./assets/aboutme.jpeg" alt="Niti Goyal" class="section-image">
+    </div>
+  </section>
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+  <section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">
+          <img src="./assets/logos/comsail.png" alt="CoMSAIL Lab logo" class="timeline-logo">
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3>CoMSAIL – JXWang Research Lab</h3>
+            <span class="timeline-date">Aug 2025 – Present</span>
+          </div>
+          <h4>Undergraduate Researcher</h4>
+          <p>Researching optimal drone navigation through fluid currents using only imperfect existing flight data. Built a 2D Gymnasium environment with Taylor-Green vortex flow fields, generated a 20,000-episode offline dataset, and benchmarked 3 algorithms — MeanFlowQL achieved 100% success rate and reached the goal 3.9× faster than the baseline.</p>
+          <a href="https://github.com/niti-go/zermelo-navigation" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">
+          <img src="./assets/logos/promptdriven.svg" alt="PromptDriven logo" class="timeline-logo">
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3>PromptDriven</h3>
+            <span class="timeline-date">2025</span>
+          </div>
+          <h4>Open Source Contributor</h4>
+          <p>PDD is an open-source developer tool (600+ GitHub stars) where AI agents generate and maintain code from prompt specifications. Contributed PRs adding an intelligent dependency identifier and a new LLM credential management system.</p>
+          <a href="https://github.com/promptdriven/pdd/pulls?q=author:niti-go" class="card-link" target="_blank" rel="noopener noreferrer">View Contributions →</a>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">
+          <img src="./assets/logos/paradigm.jpeg" alt="Paradigm AI logo" class="timeline-logo timeline-logo--cover">
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3>Paradigm AI</h3>
+            <span class="timeline-date">2024</span>
+          </div>
+          <h4>Machine Learning Intern</h4>
+          <p>Worked on an electrical system diagram summarizer, using LLMs and accuracy validation to summarize features like transformers, circuit breakers, and fuses.</p>
+          <a href="https://www.github.com/niti-go/" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">
+          <img src="./assets/logos/helion.jpeg" alt="Helion Capital Partners logo" class="timeline-logo timeline-logo--cover">
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3>Helion Capital Partners</h3>
+            <span class="timeline-date">2024</span>
+          </div>
+          <h4>Options Data Scientist (Contract)</h4>
+          <p>Worked directly with the founder to build an options flow dashboard analyzing over 10K daily trades across U.S. equities. Analyzed real-time options flow data and created visualizations to surface unusual activity.</p>
+          <a href="https://www.github.com/niti-go/" class="card-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="card-grid">
+      <a href="https://github.com/niti-go/Minneapolis_City_Directories_OCR" class="card project-card" target="_blank" rel="noopener noreferrer">
+        <img src="./assets/minneapolis.png" alt="Minneapolis City Directories OCR" class="card-image">
+        <h3>Minneapolis City Directories OCR</h3>
+        <p>An automated pipeline using YOLOv8 object detection and Tesseract OCR to extract structured resident data from scanned Minneapolis city directories (1900–1950), enabling timelines of residents at specific addresses.</p>
+        <span class="card-link">View on GitHub →</span>
+      </a>
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+      <a href="https://github.com/niti-go/FinBot" class="card project-card" target="_blank" rel="noopener noreferrer">
+        <img src="./assets/finbot.png" alt="FinBot" class="card-image">
+        <h3>FinBot</h3>
+        <p>A chatbot that analyzes SEC Form 13F filings to answer questions about institutional investor behavior and trading trends, built with a PostgreSQL database, LangChain SQL Agent, and Streamlit.</p>
+        <span class="card-link">View on GitHub →</span>
+      </a>
+    </div>
+  </section>
 
-					</section>
+  <section id="blog" class="section">
+    <h2 class="section-title">Blog</h2>
+    <div class="blog-grid">
+      <a href="example-post.html" class="card project-card blog-card">
+        <span class="blog-date">April 18, 2024</span>
+        <h3 class="blog-title">Getting Started with Machine Learning</h3>
+        <p class="blog-excerpt">Learn the fundamentals of machine learning, from basic concepts to implementing your first models.</p>
+        <span class="card-link">Read More →</span>
+      </a>
+    </div>
+  </section>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+<section id="contact" class="section">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:ng459@cornell.edu" class="contact-icon" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/niti-goyal/" class="contact-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.github.com/niti-go/" class="contact-icon" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+</body>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
