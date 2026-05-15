@@ -1,0 +1,29 @@
+<!-- project_modals/minneapolis.html -->
+<div id="minneapolis" class="modal">
+  <div class="modal-overlay" onclick="closeProjectModal('minneapolis')"></div>
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeProjectModal('minneapolis')">&times;</span>
+    <h3>Extracting Records from Minneapolis City Directories</h3>
+    <div class="modal-links">
+      <a href="https://github.com/niti-go/Minneapolis_City_Directories_OCR" class="card-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+
+    <div class="modal-split">
+      <div class="modal-split-video">
+        <iframe src="https://drive.google.com/file/d/1T30MKxx7w2nuYZSjUxtgf_hMOd4Qr4Dt/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <div class="modal-split-text">
+        <p>This is a personal project I did over the summer. I created a pipeline that extracts structured resident data from scanned Minneapolis city directory pages (1900–1950). It detects the listing regions on each page, runs OCR on them, and outputs JSON so you can trace who lived at a given address across decades.</p>
+
+        <h4>Tech & Skills</h4>
+        <ul>
+          <li>Python, OpenCV, PIL</li>
+          <li>YOLOv8 (object detection)</li>
+          <li>Tesseract OCR</li>
+          <li>LabelStudio (data annotation)</li>
+          <li>Image preprocessing & layout detection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

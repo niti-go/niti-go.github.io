@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trying to Adapt Visual Anagrams to use Latent Diffusion - Niti Goyal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Kalam:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="../index.html" class="nav-brand"><img src="../assets/name_logo.jpg" alt="Niti Goyal" class="nav-logo"></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="https://drive.google.com/file/d/1MybwZ9QiYv-mf2YUarSxqB5aOsm3k6h5/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
+    </ul>
+  </nav>
+
+  <article class="blog-post">
+    <a href="../index.html#blog" class="back-link">← Back to Blog</a>
+
+    <h1>Trying to Adapt Visual Anagrams to use Latent Diffusion</h1>
+    <p class="blog-post-meta">May 5, 2026</p>
+
+    <h2>Visual Anagrams</h2>
+
+    <p>This semester in my Deep Learning course, I learned about the <a href="https://dangeng.github.io/visual_anagrams/" target="_blank" rel="noopener noreferrer">Visual Anagrams</a> paper (Geng, Park, and Owens, CVPR 2024). The authors cleverly use diffusion models to generate optical illusions that can look like one image from one angle and a different image when rotated.</p>
+
+    <figure class="anagram-pair">
+      <img src="../assets/anagram_kitchenware.png" alt="a painting of kitchenware">
+      <img src="../assets/anagram_kitchenware.png" alt="a painting of a red panda, rotated 180 degrees" class="rotated">
+      <figcaption>The same generated image, viewed upright and rotated 180°. Image from Geng et al., <a href="https://dangeng.github.io/visual_anagrams/" target="_blank" rel="noopener noreferrer">Visual Anagrams</a>.</figcaption>
+    </figure>
+
+    <p>They achieve this by feeding in two natural language prompts. During inference, they start with an image that is pure noise. They pass it through the diffusion model conditioned on the first prompt to predict the noise. At the same time, they also pass the rotated version of the image into the diffusion model conditioned on the second prompt. This gives them two noise estimates. They average the two noise estimates together and subtract that from the image. They repeat this for many timesteps to get the final result.</p>
+
+    <p>The final results are fun to look at and could have cool applications. For example, imagine a billboard in Times Square that looks like one advertisement from far away and another image to pedestrians up-close.</p>
+
+    <p>The authors used pixel-space diffusion, which means the inputs to the denoiser network at every step are the entire 64x64x3 image data. It's more common nowadays to use latent diffusion, which is a type of diffusion model that uses a VAE to convert the image to and from a smaller 'latent' space where the denoiser network operates. This makes inference faster and allows you to generate larger, higher quality images.</p>
+
+    <figure class="post-figure">
+      <img src="../assets/pixel_vs_latent.png" alt="diagram of pixel space vs. latent space" style="max-width: 500px;">
+      <figcaption>Pixel space vs. latent space (image from <a href="https://ar5iv.labs.arxiv.org/html/2302.02412" target="_blank" rel="noopener noreferrer">this paper</a>).</figcaption>
+    </figure>
+
+    <p>However, the authors found that visual anagrams don't work in the latent space, because the latent space is not equivariant. That means that if you rotate an image's latent values, that doesn't necessarily mean you will exactly get the rotated image out. Rotations in the latent space don't correspond to rotations in the image space.</p>
+
+    <p>Unfortunately this means the authors were limited to using older models like DeepFloyd that support pixel-based diffusion, rather than newer models like Stable Diffusion which use latent diffusion and are more powerful.</p>
+
+    <h2>Can we adapt Visual Anagrams to use latent diffusion?</h2>
+
+    <p>If it's possible to use latent diffusion to create visual anagrams, it could be much more useful.</p>
+
+    <p>I found a 2025 paper called <a href="https://eq-vae.github.io/" target="_blank" rel="noopener noreferrer">EQ-VAE</a> that addresses the problem of non-equivariant latent spaces, with the intention of making diffusion training faster. They add an equivariance term to the VAE's training loss and fine-tune the VAE that comes with Stable Diffusion for a few epochs. The resulting "EQ-VAE" has a latent space that is equivariant.</p>
+
+    <p>My idea was to combine the two papers: Replace Stable Diffusion 1.5's VAE with EQ-VAE. This is a very simple one-line change. Then, we could run Visual Anagrams using this new latent diffusion model, allowing for higher quality images.</p>
+
+    <h2>What happened when I tried it</h2>
+
+    <p>I ran the new model to generate a teddy bear. However, my output looked a bit strange. The bear was recognizable but covered in a strange thatched texture. When I ran the same prompt through the original, unaltered Stable Diffusion model, the output was clean.</p>
+
+    <figure class="teddy-grid">
+      <div>
+        <img src="../assets/teddy_thatched_1.png" alt="thatched teddy bear, attempt 1">
+        <p>SD 1.5 + EQ-VAE</p>
+      </div>
+      <div>
+        <img src="../assets/teddy_thatched_2.png" alt="thatched teddy bear, attempt 2">
+        <p>SD 1.5 + EQ-VAE</p>
+      </div>
+      <div>
+        <img src="../assets/teddy_clean.png" alt="clean teddy bear with original VAE">
+        <p>SD 1.5 + original VAE</p>
+      </div>
+      <figcaption>My prompt: "an oil painting of a teddy bear"</figcaption>
+    </figure>
+
+    <p>Eventually, through some Googling and experimenting, I learned why. The Stable Diffusion UNet was trained to denoise latents that come from the <em>original</em> SD-VAE. It learned that VAE's latent space very precisely: what magnitudes to expect and what feature vectors tend to appear together. EQ-VAE is a fine-tuned version of SD-VAE, and the reconstruction quality is nearly identical. But the latents themselves are now distributed slightly differently, because the encoder has been pushed to organize them so that rotations make sense.</p>
+
+    <p>However, once the VAE has been fine-tuned away to become EQ-VAE, it no longer 'fits in' with the UNet. When it denoises the images in the EQ-VAE's latent space, it produces the thatched texture.</p>
+
+    <p>My takeaway is that even if one portion of an architecture was fine-tuned from another model (EQ-VAE was fine-tuned from SD 1.5's VAE), you can't just plug that EQ-VAE back into SD 1.5's architecture.</p>
+
+    <p>Coming back to my original question: if I wanted to use a latent diffusion model like Stable Diffusion to make visual anagrams, I would need both an equivariant VAE <em>and</em> a UNet trained from scratch on top of it. EQ-VAE is half of that, but as far as I can tell, no one has put the other half together yet. There isn't a strong, off-the-shelf latent diffusion model whose latent space is also equivariant. Until there is, visual anagrams are stuck in pixel space.</p>
+
+  </article>
+</body>
+
+</html>

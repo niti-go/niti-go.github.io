@@ -1,0 +1,59 @@
+<!-- project_modals/lexington.html -->
+<div id="lexington" class="modal">
+  <div class="modal-overlay" onclick="closeProjectModal('lexington')"></div>
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeProjectModal('lexington')">&times;</span>
+    <h3>Lexington Property Analysis</h3>
+    <div class="modal-links">
+      <a href="https://github.com/niti-go/lexington-property-analysis" class="card-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://lexington-property-analysis.onrender.com/" class="card-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
+    </div>
+
+    <p>I live in Lexington, MA. In 2024, my family noticed that our property taxes increased significantly from 2023 to 2024, even though we made no changes to our house. I wanted to determine if this was part of a town-wide trend or a unique increase in the town's assessment of our property. If it was the latter, this data could help us file an abatement and possibly reduce our taxes.</p>
+
+    <p>However, you usually need good evidence to file a successful abatement, such as sale prices of comparable homes or an expensive third-party appraisal. Most homeowners don't bother with this process. I noticed that every property's assessment is public in the town's database, but scattered with no easy way to find and compare anything.</p>
+
+    <figure class="modal-figure modal-figure-left">
+      <img src="./assets/landing_lexington.png" alt="my tool's landing page">
+      <figcaption>The landing page where homeowners enter their address.</figcaption>
+    </figure>
+
+    <p>So, I built and deployed a tool that does the comparison for homeowners.</p>
+
+    <p>First I scraped more than 12,000 properties from the town's public database, obtaining 35+ features per home (year built, square footage, lot size, sale history, etc.). The scrape was originally taking 2 hours, but I added multithreading to bring it under 10 minutes.</p>
+
+    <div class="modal-clear"></div>
+
+    <figure class="modal-figure modal-figure-right">
+      <img src="./assets/correlation_lexington.png" alt="correlation heatmap">
+      <figcaption>Correlation heatmap of property features against assessed value.</figcaption>
+    </figure>
+
+    <p>Then, I generated a correlation heatmap to figure out which features actually correlate with a home's assessment. Year built, living area, and "building percent good" turned out to matter most, so those became the features I matched comparable homes on.</p>
+
+    <div class="modal-clear"></div>
+
+    <figure class="modal-figure modal-figure-left">
+      <img src="./assets/simple_comparison_lexington.png" alt="an example opening statistic of the report">
+      <figcaption>An example opening statistic from a property's report.</figcaption>
+    </figure>
+
+    <p>The web app takes any Lexington address and generates a report for it. It shows how that home's assessment compares to the median for similar properties, lists the three closest recent sales, plots a regression trendline, and includes a 3D scatter of every house in town so you can spot outliers. The goal was to give residents a fast, visual answer to "is my assessment fair?" without making them dig through the database.</p>
+
+    <div class="modal-clear"></div>
+
+    <figure class="modal-figure modal-figure-right">
+      <img src="./assets/trendline_lexington.png" alt="one of the report's charts">
+      <figcaption>An example chart from a report: a scatter with a regression trendline.</figcaption>
+    </figure>
+
+    <p>For my own house, my report showed that our increase was in line with other comparable houses, so we accepted our property taxes.</p>
+
+    <p>Next, I want to study what successful abatements actually look like so the tool can highlight the patterns those cases share. I'd also like to automate the scrape so it refreshes every year when new assessments come out.</p>
+
+    <p>I built this using Python, pandas, Flask, Plotly, and BeautifulSoup. Deployed on Render's free tier, so the first load can take a few seconds to spin up.</p>
+
+
+    <div class="modal-clear"></div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<!-- project_modals/finbot.html -->
+<div id="finbot" class="modal">
+  <div class="modal-overlay" onclick="closeProjectModal('finbot')"></div>
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeProjectModal('finbot')">&times;</span>
+    <h3>FinBot</h3>
+
+    <div class="modal-links">
+      <a href="https://github.com/niti-go/FinBot" class="card-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+
+    <div class="modal-split">
+      <img src="./assets/finbot_chat.png" alt="FinBot chat interface" class="modal-split-image">
+      <div class="modal-split-text">
+        <p>We built a chatbot that answers questions about institutional investor behavior by analyzing SEC Form 13F filings. These filings, submitted quarterly by investment managers with over $100 million in assets, disclose their holdings in U.S. exchange-traded securities, including position sizes, market values, and asset types.</p>
+
+        <p>Our system uses a database of 13F filings data, a LangChain SQL Agent to interpret natural language queries, and a Streamlit frontend to deliver insights. Users can ask questions in plain English and receive data-driven answers about institutional trading trends.</p>
+
+        <p><strong>Date:</strong> Jan – May 2025<br>
+        <strong>Organization:</strong> Cornell Fintech Club<br>
+        <strong>Role:</strong> Technical Project Manager (led a team of 4 engineers)</p>
+
+        <h4>Tech & Skills</h4>
+        <p>Python · PostgreSQL · LangChain · Gemini · Streamlit · BeautifulSoup · SEC EDGAR API · Yahoo Finance API</p>
+      </div>
+    </div>
+
+    <p>Example questions it can answer:</p>
+    <ul>
+      <li>"Which top 5 firms increased their Tesla holdings the most over the last two quarters?"</li>
+      <li>"Has BlackRock shifted from financials to healthcare in the past year?"</li>
+      <li>"What new positions did Berkshire Hathaway add this quarter?"</li>
+    </ul>
+
+    <p>This information can help investors understand large firms' strategies. For example, if a major firm suddenly puts a lot more money into healthcare, it could indicate that they expect that sector to grow, maybe by anticipating policy changes in that area. This can inform your own portfolio strategy. It can also give you insights into the risk exposure of the firm itself.</p>
+
+    <h4>My Contributions</h4>
+    <p>As Technical Project Manager, I led a team of 4 engineers — scoping the project and splitting work across data, backend, and frontend. I designed the PostgreSQL schema, built the pipeline that pulls 13F filings from SEC EDGAR and enriches them with sector data from Yahoo Finance, and wrote the grounded system prompt for the LangChain SQL agent.</p>
+
+    <img src="./assets/finbot_schema.png" alt="FinBot database schema" class="modal-image" style="max-width: 800px;">
+    <p style="text-align: center;"><em>The four-table schema I designed, giving the SQL agent clean joins across institutions, filings, and sectors.</em></p>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<!-- project_modals/comsail.html -->
+<div id="comsail" class="modal">
+  <div class="modal-overlay" onclick="closeProjectModal('comsail')"></div>
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeProjectModal('comsail')">&times;</span>
+    <h3>CoMSAIL - JXWang Research Lab</h3>
+
+    <div class="modal-split">
+      <img src="./assets/comsail.gif" alt="Drone navigating a Taylor-Green vortex flow field" class="modal-split-image">
+      <div class="modal-split-text">
+        <p><strong>Date:</strong> Aug 2025 – Present</p>
+
+        <p>I'm an undergraduate researcher studying optimal drone navigation through fluid currents using only imperfect existing flight data. The goal is to learn optimal navigation policies without ever flying a drone in a new environment by leveraging datasets of past suboptimal trajectories.</p>
+
+        <h4>Some of my contributions:</h4>
+        <ul>
+          <li>Built a 2D Gymnasium environment with Taylor-Green vortex and homogeneous isotropic flow fields to simulate navigation under fluid dynamics.</li>
+          <li>Designed a reward function to mimic real-world drone energy costs.</li>
+          <li>Generated a 20,000-episode offline dataset of suboptimal trajectories for training.</li>
+          <li>Benchmarked 3 algorithms (Behavior Cloning, Decision Transformer, and MeanFlowQL) on the offline RL task.</li>
+        </ul>
+
+        <h4>Tech & Skills</h4>
+        <p>Python · PyTorch · Gymnasium · NumPy · Offline Reinforcement Learning</p>
+      </div>
+    </div>
+  </div>
+</div>
