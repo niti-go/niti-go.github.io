@@ -28,7 +28,7 @@
     <div class="hero-content">
       <p class="hero-greeting">Hi! I am</p>
       <h1 class="hero-name">Niti Goyal</h1>
-      <p class="hero-subtitle">Aspiring ML Engineer</p>
+      <p class="hero-subtitle">AI Engineer @ Prompt Driven</p>
       <div class="contact-links hero-contact">
         <a href="mailto:ng459@cornell.edu" class="contact-icon" title="Email"><img src="./assets/mailimg.jpg" alt="Email"></a>
         <a href="https://www.linkedin.com/in/niti-goyal/" class="contact-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer"><img src="./assets/linkedinimg.jpg" alt="LinkedIn"></a>
@@ -42,10 +42,15 @@
     <div class="content-grid">
       <div class="section-text">
         <h3>Education</h3>
-        <p>Computer Science at Cornell University</p>
+        <p class="edu-line">
+          <img src="./assets/logos/cornell.svg" alt="" class="edu-logo">
+          Computer Science at Cornell · B.S. 2026
+        </p>
 
         <h3>Interests</h3>
-        <p>I am a graduating senior with work experience at multiple startups. I have built projects involving LLMs, applied RL, and computer vision. I'm looking for ML engineering roles where I can continue this work.</p>
+        <p>As part of a team of six at <a href="https://promptdriven.ai/" target="_blank"
+            rel="noopener noreferrer">Prompt Driven</a>, I take charge in influencing the product direction of a software developer platform where English files are the source of truth in a codebase, and AI agents generate and maintain code from that.</p>
+        <p>At Cornell, I researched how diffusion models can be combined with reinforcement learning to learn optimal drone control in turbulent fluid environments. I was advised by Professor Jian-Xun Wang.</p>
         <p>My hobbies include rock climbing, practicing handstands, and reading news articles.</p>
       </div>
       <img src="./assets/aboutme.jpeg" alt="Niti Goyal" class="section-image">
@@ -68,35 +73,35 @@
   <section id="experience" class="section">
     <h2 class="section-title">Experience</h2>
     <div class="exp-cards">
-      <a href="#" class="exp-card exp-card-1" data-project-id="comsail" onclick="openProjectModal('comsail', event)">
+      <a href="https://github.com/promptdriven/pdd/pulls?q=author:niti-go" class="exp-card exp-card-1" target="_blank" rel="noopener noreferrer">
+        <div class="exp-card-inner">
+          <div class="exp-card-front">
+            <img src="./assets/logos/promptdriven.svg" alt="PromptDriven logo" class="exp-card-img">
+            <div class="exp-card-text">
+              <h3>PromptDriven</h3>
+              <h4>AI Engineer</h4>
+              <span class="exp-card-date">Feb 2026 - Present</span>
+            </div>
+          </div>
+          <div class="exp-card-back">
+            <p>PDD aims to make English the programming language. I designed a new system to curate summaries of dependent files and built a new LLM credential management system.</p>
+            <span class="card-link">View Some Contributions →</span>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="exp-card exp-card-2" data-project-id="comsail" onclick="openProjectModal('comsail', event)">
         <div class="exp-card-inner">
           <div class="exp-card-front">
             <img src="./assets/logos/comsail.png" alt="CoMSAIL Lab logo" class="exp-card-img">
             <div class="exp-card-text">
               <h3>CoMSAIL - JXWang Research Lab</h3>
               <h4>Undergraduate Researcher</h4>
-              <span class="exp-card-date">Aug 2025 - Present</span>
+              <span class="exp-card-date">Aug 2025 - Jun 2026</span>
             </div>
           </div>
           <div class="exp-card-back">
             <p>Researching optimal drone navigation through fluid fields using SOTA algorithms in offline reinforcement learning and environment design.</p>
             <span class="card-link">Learn more →</span>
-          </div>
-        </div>
-      </a>
-      <a href="https://github.com/promptdriven/pdd/pulls?q=author:niti-go" class="exp-card exp-card-2" target="_blank" rel="noopener noreferrer">
-        <div class="exp-card-inner">
-          <div class="exp-card-front">
-            <img src="./assets/logos/promptdriven.svg" alt="PromptDriven logo" class="exp-card-img">
-            <div class="exp-card-text">
-              <h3>PromptDriven</h3>
-              <h4>Open Source Contributor</h4>
-              <span class="exp-card-date">Feb 2026 - Present</span>
-            </div>
-          </div>
-          <div class="exp-card-back">
-            <p>PDD aims to make English the programming language. I designed a new system to curate summaries of dependent files and built a new LLM credential management system.</p>
-            <span class="card-link">View Contributions →</span>
           </div>
         </div>
       </a>
@@ -122,7 +127,7 @@
             <div class="exp-card-text">
               <h3>Paradigm AI</h3>
               <h4>Machine Learning Intern</h4>
-              <span class="exp-card-date">2024</span>
+              <span class="exp-card-date">Jun 2025 - Aug 2025</span>
             </div>
           </div>
           <div class="exp-card-back">
